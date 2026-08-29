@@ -23,8 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
     requestHeaders.get("x-forwarded-proto") ??
     (host.startsWith("localhost") ? "http" : "https");
   const base = new URL(`${protocol}://${host}`);
-  const title = "个人档案 · Personal Archive";
-  const description = "关于哲学、绘画、音乐、摄影与硅光工业的双语个人记录。";
+  const title = "Personal Archive · 个人档案";
+  const description = "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.";
   const socialImage = new URL("/og.png", base).toString();
 
   return {

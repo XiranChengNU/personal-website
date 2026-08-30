@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+const siteUrl = "https://night-personal-archive.renazir.chatgpt.site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,42 +14,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host =
-    requestHeaders.get("x-forwarded-host") ??
-    requestHeaders.get("host") ??
-    "localhost:3000";
-  const protocol =
-    requestHeaders.get("x-forwarded-proto") ??
-    (host.startsWith("localhost") ? "http" : "https");
-  const base = new URL(`${protocol}://${host}`);
-  const title = "Personal Archive · 个人档案";
-  const description = "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.";
-  const socialImage = new URL("/og.png", base).toString();
-
-  return {
-    metadataBase: base,
-    title,
-    description,
-    icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
-    },
-    openGraph: {
-      title,
-      description,
-      images: [{ url: socialImage, width: 1200, height: 630 }],
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [socialImage],
-    },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: "Personal Archive · 个人档案",
+  description:
+    "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Personal Archive · 个人档案",
+    description:
+      "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Personal Archive · 个人档案",
+    description:
+      "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
+    images: ["/og.png"],
+  },
+};
 
 export default function RootLayout({
   children,

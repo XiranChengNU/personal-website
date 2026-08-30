@@ -52,6 +52,7 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=90",
     layout: "card-third",
+    href: "/about",
   },
 ];
 
@@ -63,7 +64,7 @@ export default function Home() {
           Personal Archive
         </a>
         <nav aria-label="主导航 / Main navigation">
-          <a href="#about">关于</a>
+          <a href="/about">关于</a>
           <a href="#work">作品</a>
           <a href="#contact">联系</a>
         </nav>
@@ -115,13 +116,20 @@ export default function Home() {
               <div className="card-shade" />
               <div className="card-topline">
                 <span>{category.number}</span>
-                <span>COMING SOON</span>
+                <span>{category.href ? "VIEW PROFILE" : "COMING SOON"}</span>
               </div>
               <div className="card-copy">
                 <p lang="en">{category.english}</p>
                 <h3>{category.title}</h3>
                 <span>{category.description}</span>
               </div>
+              {category.href ? (
+                <a
+                  className="card-link-overlay"
+                  href={category.href}
+                  aria-label="查看程熙然的个人介绍 / View Xiran Cheng's profile"
+                />
+              ) : null}
             </article>
           ))}
         </div>

@@ -1,117 +1,108 @@
 import type { Metadata } from "next";
 
-const title = "程熙然 · Xiran Cheng";
-const description =
-  "应用物理本科生，从北京八中到 Northeastern University。Applied Physics, art and technology.";
-
+const title = "Xiran Cheng · About";
+const description = "Northeastern University EE 博士在读。北京八中、北京工业大学、UC Davis 与 Northeastern University 的教育经历。";
 export const metadata: Metadata = {
-  title,
-  description,
+  title, description,
   openGraph: { title, description, images: [], type: "profile" },
   twitter: { card: "summary", title, description, images: [] },
 };
 
-const interests = [
-  ["硅光", "Silicon Photonics"],
-  ["哲学", "Philosophy"],
-  ["绘画", "Painting"],
-  ["摄影", "Photography"],
-  ["音乐", "Music"],
+const education = [
+  {
+    school: "北京市第八中学",
+    english: "Beijing No. 8 High School",
+    degree: "高中",
+    degreeEnglish: "High school",
+    period: "2017 — 2020",
+    image: "/education/beijing-no8-logo.png",
+    mark: "mark-no8",
+    current: false,
+  },
+  {
+    school: "北京工业大学",
+    english: "Beijing University of Technology",
+    degree: "应用物理 · 本科",
+    degreeEnglish: "Bachelor’s · Applied Physics",
+    period: "",
+    image: "/education/bjut-seal.png",
+    mark: "",
+    current: false,
+  },
+  {
+    school: "加州大学戴维斯分校",
+    english: "University of California, Davis",
+    degree: "电气与计算机工程 · 硕士",
+    degreeEnglish: "Master’s · Electrical and Computer Engineering",
+    period: "",
+    image: "/education/ucdavis-wordmark.gif",
+    mark: "mark-ucdavis",
+    current: false,
+  },
+  {
+    school: "美国东北大学",
+    english: "Northeastern University",
+    degree: "电气工程 · 博士在读",
+    degreeEnglish: "Ph.D. student · Electrical Engineering",
+    period: "2026.09 —",
+    image: "/education/northeastern-monogram.png",
+    mark: "mark-neu",
+    current: true,
+  },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="about-page">
+    <>
       <header className="site-header">
-        <a className="brand" href="/" aria-label="返回首页 / Back to home">
-          Personal Archive
-        </a>
+        <a className="brand" href="/" aria-label="Xiran Cheng 首页">Xiran Cheng</a>
         <nav aria-label="主导航 / Main navigation">
-          <a aria-current="page" href="/about">关于</a>
-          <a href="/#work">作品</a>
-          <a href="/#contact">联系</a>
+          <a href="/about" aria-current="page">关于 <span lang="en">About</span></a>
+          <a href="/#work">档案 <span lang="en">Archive</span></a>
         </nav>
       </header>
-
-      <section className="about-hero">
-        <p className="eyebrow">ABOUT / 关于</p>
-        <h1>程熙然<span lang="en">Xiran Cheng</span></h1>
-        <div className="about-intro">
-          <p>
-            我关注光如何成为技术，也关注思想、图像与声音如何成为表达。
-            2026 年 9 月起，我将在 Northeastern University 开始应用物理本科学习。
-          </p>
-          <p lang="en">
-            I explore how light becomes technology—and how ideas, images and sound
-            become expression. I will begin my undergraduate studies in Applied
-            Physics at Northeastern University in September 2026.
-          </p>
-        </div>
-        <div className="identity-line">
-          <span>应用物理本科</span>
-          <span lang="en">B.S. in Applied Physics</span>
-          <span>Boston, MA</span>
-        </div>
-      </section>
-
-      <section className="education-section" aria-labelledby="education-title">
-        <div className="about-section-heading">
-          <p>EDUCATION / 教育经历</p>
-          <h2 id="education-title">从北京，到波士顿。</h2>
-          <span lang="en">From Beijing to Boston.</span>
-        </div>
-
-        <div className="education-path">
-          <article className="education-card">
-            <div className="school-mark school-mark-no8">
-              <img src="/education/beijing-no8-logo.png" alt="北京市第八中学校徽与校名" />
-            </div>
-            <div className="education-copy">
-              <p className="education-date">2017 — 2020</p>
-              <h3>北京市第八中学</h3>
-              <p lang="en">Beijing No. 8 High School</p>
-              <span>Beijing, China</span>
-            </div>
-          </article>
-
-          <div className="education-connector" aria-hidden="true"><span /></div>
-
-          <article className="education-card education-card-neu">
-            <div className="school-mark school-mark-neu">
-              <img src="/education/northeastern-monogram.png" alt="Northeastern University 红色 N 标志" />
-            </div>
-            <div className="education-copy">
-              <p className="education-date">STARTING SEP 2026</p>
-              <h3>Northeastern University</h3>
-              <p>应用物理本科 · B.S. in Applied Physics</p>
-              <span>Boston, Massachusetts</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="interests-section" aria-labelledby="interests-title">
-        <div>
-          <p className="eyebrow">INTERESTS / 关注领域</p>
-          <h2 id="interests-title">理性与感性，都是理解世界的方法。</h2>
-          <p lang="en">Reason and sensibility are both ways of understanding the world.</p>
-        </div>
-        <ul className="interest-list">
-          {interests.map(([chinese, english], index) => (
-            <li key={english}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{chinese}</strong>
-              <em lang="en">{english}</em>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <footer className="about-footer">
-        <div><p>保持好奇，也保持诚实。</p><span lang="en">Stay curious. Stay honest.</span></div>
-        <a className="text-link" href="/">返回档案 <span lang="en">Back to archive ↗</span></a>
-        <p className="copyright">© 2026 Xiran Cheng</p>
-      </footer>
-    </main>
+      <main>
+        <section className="profile-hero wrap">
+          <p className="eyebrow">ABOUT / 关于</p>
+          <h1>Xiran Cheng</h1>
+          <p className="profile-role">Electrical Engineering. <span>Northeastern University · 博士在读 / Ph.D. student</span></p>
+          <div className="profile-copy">
+            <p>从应用物理到电气工程，我持续探索技术，也用绘画、摄影、音乐与哲学拓展观察世界的方式。</p>
+            <p lang="en">From applied physics to electrical engineering, I explore technology alongside painting, photography, music and philosophy.</p>
+          </div>
+        </section>
+        <section className="education wrap" aria-labelledby="education-title">
+          <div className="section-heading">
+            <h2 id="education-title">教育经历<span lang="en">Education.</span></h2>
+          </div>
+          <ol className="education-list">
+            {education.map((item) => (
+              <li className="education-item" key={item.english}>
+                <div className={`school-mark ${item.mark}`}>
+                  {item.mark === "mark-no8" ? (
+                    <span className="no8-emblem"><img src={item.image} alt="北京市第八中学校徽" width="300" height="70" /></span>
+                  ) : (
+                    <img src={item.image} alt={`${item.school} / ${item.english} 校方标志`} width="88" height="88" />
+                  )}
+                </div>
+                <div>
+                  <h3 className="school-name">{item.school}</h3>
+                  <p className="school-english" lang="en">{item.english}</p>
+                  <p className="school-degree">{item.degree}<br /><span lang="en">{item.degreeEnglish}</span></p>
+                </div>
+                {(item.period || item.current) && <div className="school-period">{item.period}{item.current && <span className="current">至今 · Present</span>}</div>}
+              </li>
+            ))}
+          </ol>
+        </section>
+        <section className="profile-interests wrap" aria-labelledby="interests-title">
+          <div className="section-heading"><h2 id="interests-title">课堂之外<span lang="en">Beyond engineering.</span></h2></div>
+          <p className="interest-inline">哲学思考、绘画、摄影、音乐评测，以及硅光工业分享。</p>
+          <p className="interest-inline" lang="en">Philosophy, painting, photography, music reviews and notes on silicon photonics.</p>
+          <a className="text-link" href="/#work">浏览档案 <span lang="en">Explore the archive</span><span aria-hidden="true">↗</span></a>
+        </section>
+      </main>
+      <footer className="site-footer wrap"><span>© 2026 Xiran Cheng</span><a href="https://github.com/XiranChengNU">GitHub <span aria-hidden="true">↗</span></a></footer>
+    </>
   );
 }

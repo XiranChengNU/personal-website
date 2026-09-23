@@ -26,7 +26,7 @@ for (const route of ["", ...routes]) {
 
 writeFileSync(join(output, ".nojekyll"), "");
 
-for (const asset of ["unity-1.jpeg", "unity-2.jpeg", "unity-3.jpeg", "unity-4.jpeg", "unity-5.jpeg", "apple-park-visitor-center.jpeg", "photography.js", "reveal.js", "favicon.svg", "education/beijing-no8-logo.png"])
+for (const asset of ["unity-1.jpeg", "unity-2.jpeg", "unity-3.jpeg", "unity-4.jpeg", "unity-5.jpeg", "apple-park-visitor-center.jpeg", "photography.js", "reveal.js", "personal-mark.png", "education/beijing-no8-logo.png"])
   if (!existsSync(join(output, asset))) throw new Error(`Missing public asset: ${asset}`);
 
 console.log("GitHub Pages files are ready in dist/client.");

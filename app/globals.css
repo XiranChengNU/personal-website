@@ -17,7 +17,9 @@ a:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; border-ra
 a:hover { color: var(--blue); }
 .wrap { width: min(1040px, calc(100% - 64px)); margin-inline: auto; }
 .site-header { min-height: 64px; padding: 16px max(32px, calc((100vw - 1040px) / 2)); display: flex; justify-content: space-between; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); background: rgba(8,8,8,.92); }
-.brand { font-size: 1rem; font-weight: 600; letter-spacing: -.025em; }
+.brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; font-size: 1rem; font-weight: 600; letter-spacing: -.025em; }
+.brand-mark { display: block; width: 78px; height: 44px; overflow: hidden; }
+.brand-mark img { display: block; width: 78px; height: 78px; max-width: none; transform: translateY(-20px); filter: invert(1); mix-blend-mode: screen; }
 nav { display: flex; flex-wrap: wrap; gap: 28px; }
 nav a { font-size: .875rem; color: #c4c4c8; }
 nav a[aria-current="page"] { color: white; }
@@ -118,6 +120,9 @@ html.motion-ready .archive-row:nth-child(even), html.motion-ready .education-ite
 @media (max-width: 700px) {
   .wrap { width: calc(100% - 40px); }
   .site-header { padding-inline: 20px; gap: 14px; }
+  .brand { gap: 8px; font-size: .9rem; }
+  .brand-mark { width: 54px; height: 36px; }
+  .brand-mark img { width: 54px; height: 54px; transform: translateY(-14px); }
   nav { gap: 16px; }
   nav a span { display: none; }
   .hero { padding-block: 92px 88px; }

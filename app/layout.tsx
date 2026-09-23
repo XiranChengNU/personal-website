@@ -21,8 +21,9 @@ export const metadata: Metadata = {
   description:
     "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
   icons: {
-    icon: sitePath("/favicon.svg"),
-    shortcut: sitePath("/favicon.svg"),
+    icon: sitePath("/personal-mark.png"),
+    shortcut: sitePath("/personal-mark.png"),
+    apple: sitePath("/personal-mark.png"),
   },
   openGraph: {
     title: "Personal Archive · 个人档案",

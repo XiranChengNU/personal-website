@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { sitePath } from "../paths";
+import { SiteBrand } from "../site-brand";
 
 export const dynamic = "force-static";
 
@@ -19,7 +20,7 @@ export default function PhotographyPage() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href={sitePath("/")} aria-label="Xiran Cheng 首页">Xiran Cheng</a>
+        <SiteBrand />
         <nav aria-label="主导航 / Main navigation">
           <a href={sitePath("/about/")}>关于 <span lang="en">About</span></a>
           <a href={sitePath("/painting/")}>绘画 <span lang="en">Painting</span></a>

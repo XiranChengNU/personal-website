@@ -4,15 +4,17 @@ const categories = [
   { title: "摄影", english: "Photography", description: "城市、旅途与日常的一瞬。", translation: "Moments from cities, journeys and daily life.", href: "/photography" },
   { title: "音乐评测", english: "Music Reviews", description: "从一张专辑开始，认真聆听。", translation: "Listening closely, one record at a time.", href: "" },
   { title: "硅光工业", english: "Silicon Photonics", description: "关于技术与产业的学习和思考。", translation: "Notes on technology and industry.", href: "" },
+  { title: "区块链", english: "Blockchain", description: "从去中心化网络到真实世界应用的学习与记录。", translation: "Notes on decentralized networks and real-world applications.", href: "" },
 ];
 
 import { sitePath } from "./paths";
+import { SiteBrand } from "./site-brand";
 
 export default function Home() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href={sitePath("/")} aria-label="Xiran Cheng 首页">Xiran Cheng</a>
+        <SiteBrand />
         <nav aria-label="主导航 / Main navigation">
           <a href={sitePath("/about/")}>关于 <span lang="en">About</span></a>
           <a href={sitePath("/painting/")}>绘画 <span lang="en">Painting</span></a>

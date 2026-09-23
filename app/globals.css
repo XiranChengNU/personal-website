@@ -72,7 +72,10 @@ nav a span { margin-left: 4px; color: var(--gray); }
 .painting-heading .eyebrow { margin-bottom: 28px; }
 .painting-heading > p:last-child { margin: 24px 0 50px; color: #d2d2d7; font-size: 1rem; }
 .painting-heading > p:last-child span { margin-left: 12px; color: var(--gray); }
+.painting-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 24px; }
 .artwork { margin: 0; }
+.artwork-featured { grid-column: 1 / -1; }
+.artwork a { display: block; background: var(--surface); }
 .artwork img { display: block; width: 100%; height: auto; }
 .artwork figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 16px; color: var(--gray); font-size: .875rem; }
 .painting-back { margin-top: 48px; }
@@ -102,5 +105,6 @@ html.motion-ready .archive-row:nth-child(even), html.motion-ready .education-ite
   .school-degree span { display: block; }
   .painting-page { padding-block: 76px 72px; }
   .painting-heading > p:last-child { margin-bottom: 32px; }
+  .painting-gallery { grid-template-columns: 1fr; gap: 42px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } html.motion-ready [data-reveal] { opacity: 1; transform: none; clip-path: none; transition: none; } }

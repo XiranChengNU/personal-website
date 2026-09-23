@@ -3,8 +3,46 @@ import { sitePath } from "../paths";
 
 export const dynamic = "force-static";
 
-const title = "Unity 1 · Painting · Xiran Cheng";
-const description = "Unity 1, a digital painting by Xiran Cheng, 2021.";
+const title = "Unity · Painting · Xiran Cheng";
+const description = "Unity 1–5, a series of digital paintings by Xiran Cheng from 2021.";
+
+const paintings = [
+  {
+    title: "Unity 1",
+    image: "/unity-1.jpeg",
+    width: 2388,
+    height: 1668,
+    alt: "粉褐色背景上，绿色、蓝色、黄色与红色的宽阔弧形笔触。",
+  },
+  {
+    title: "Unity 2",
+    image: "/unity-2.jpeg",
+    width: 2048,
+    height: 2048,
+    alt: "淡粉色背景上，紫色、蓝色、绿色与橘色笔触交叠。",
+  },
+  {
+    title: "Unity 3",
+    image: "/unity-3.jpeg",
+    width: 2048,
+    height: 2048,
+    alt: "黑色背景上，荧亮彩色笔触被一道深色斜线贯穿。",
+  },
+  {
+    title: "Unity 4",
+    image: "/unity-4.jpeg",
+    width: 2048,
+    height: 2048,
+    alt: "绿色、蓝色与棕色笔触之间，一道白色斜线穿过画面。",
+  },
+  {
+    title: "Unity 5",
+    image: "/unity-5.jpeg",
+    width: 2048,
+    height: 2048,
+    alt: "柔和的粉紫与暖褐色笔触旋向深色中心。",
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -27,13 +65,19 @@ export default function PaintingPage() {
       <main className="painting-page wrap">
         <div className="painting-heading" data-reveal="expand">
           <p className="eyebrow">PAINTING / 绘画</p>
-          <h1>Unity 1</h1>
-          <p>2021 · 数字绘画 <span lang="en">Digital painting</span></p>
+          <h1>Unity</h1>
+          <p>五幅绘画 · 2021 <span lang="en">Five digital paintings</span></p>
         </div>
-        <figure className="artwork" data-reveal="expand">
-          <img src={sitePath("/unity-1.jpeg")} alt="Unity 1：粉褐色背景上，绿色、蓝色、黄色与红色的宽阔弧形笔触。" width="2388" height="1668" />
-          <figcaption>Unity 1 <span>© 2021 Xiran Cheng</span></figcaption>
-        </figure>
+        <div className="painting-gallery">
+          {paintings.map((painting, index) => (
+            <figure className={`artwork${index === 0 ? " artwork-featured" : ""}`} data-reveal="expand" key={painting.title}>
+              <a href={sitePath(painting.image)} aria-label={`查看 ${painting.title} 原图 / View full image`}>
+                <img src={sitePath(painting.image)} alt={`${painting.title}：${painting.alt}`} width={painting.width} height={painting.height} loading={index === 0 ? "eager" : "lazy"} />
+              </a>
+              <figcaption><span>{painting.title}</span><span>2021 · Digital painting</span></figcaption>
+            </figure>
+          ))}
+        </div>
         <a className="text-link painting-back" href={sitePath("/#work")}>返回档案 <span lang="en">Back to archive</span><span aria-hidden="true">↗</span></a>
       </main>
       <footer className="site-footer wrap"><span>© 2026 Xiran Cheng</span><a href="https://github.com/XiranChengNU">GitHub <span aria-hidden="true">↗</span></a></footer>

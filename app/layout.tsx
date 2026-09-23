@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import RevealOnScroll from "./reveal-on-scroll";
+import { sitePath } from "./paths";
 
-const siteUrl = "https://night-personal-archive.renazir.chatgpt.site";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://night-personal-archive.renazir.chatgpt.site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,14 +22,14 @@ export const metadata: Metadata = {
   description:
     "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: sitePath("/favicon.svg"),
+    shortcut: sitePath("/favicon.svg"),
   },
   openGraph: {
     title: "Personal Archive · 个人档案",
     description:
       "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: sitePath("/og.png"), width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
     title: "Personal Archive · 个人档案",
     description:
       "艺术、思想与科技，在这里相遇。A personal archive of art, ideas and technology.",
-    images: ["/og.png"],
+    images: [sitePath("/og.png")],
   },
 };
 
@@ -50,6 +52,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <RevealOnScroll />
       </body>
     </html>
   );

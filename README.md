@@ -8,6 +8,7 @@ A bilingual personal archive for art, philosophy, photography, music and silicon
 
 - `/` — 个人档案与内容分类 / Archive and categories
 - `/about` — 个人介绍与教育经历 / Profile and education
+- `/painting` — 绘画作品《Unity 1》 / Painting “Unity 1”
 
 ## 本地运行 / Run locally
 
@@ -28,7 +29,11 @@ npm run build
 
 ## 在线网站 / Live site
 
-[night-personal-archive.renazir.chatgpt.site](https://night-personal-archive.renazir.chatgpt.site)
+[XiranChengNU.github.io/personal-website](https://XiranChengNU.github.io/personal-website/)
+
+GitHub Pages 在 `main` 更新后由 `.github/workflows/pages.yml` 自动构建并发布。仓库的 Settings → Pages 中，Build and deployment 的 Source 需设为 GitHub Actions。
+
+GitHub Pages builds and publishes from `main` using `.github/workflows/pages.yml`. Set Settings → Pages → Build and deployment → Source to GitHub Actions.
 
 ## Education marks
 Official school marks identify educational history only; this is a personal website.

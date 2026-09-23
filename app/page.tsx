@@ -1,7 +1,7 @@
 const categories = [
   { title: "哲学思考", english: "Philosophy", description: "关于自我、技术与生活。", translation: "On the self, technology and everyday life.", href: "" },
   { title: "绘画", english: "Painting", description: "用颜色与线条记录观察。", translation: "Observations in color and line.", href: "/painting" },
-  { title: "摄影", english: "Photography", description: "城市、旅途与日常的一瞬。", translation: "Moments from cities, journeys and daily life.", href: "" },
+  { title: "摄影", english: "Photography", description: "城市、旅途与日常的一瞬。", translation: "Moments from cities, journeys and daily life.", href: "/photography" },
   { title: "音乐评测", english: "Music Reviews", description: "从一张专辑开始，认真聆听。", translation: "Listening closely, one record at a time.", href: "" },
   { title: "硅光工业", english: "Silicon Photonics", description: "关于技术与产业的学习和思考。", translation: "Notes on technology and industry.", href: "" },
 ];
@@ -16,6 +16,7 @@ export default function Home() {
         <nav aria-label="主导航 / Main navigation">
           <a href={sitePath("/about/")}>关于 <span lang="en">About</span></a>
           <a href={sitePath("/painting/")}>绘画 <span lang="en">Painting</span></a>
+          <a href={sitePath("/photography/")}>摄影 <span lang="en">Photography</span></a>
           <a href="#work">档案 <span lang="en">Archive</span></a>
         </nav>
       </header>

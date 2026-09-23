@@ -9,6 +9,7 @@ A bilingual personal archive for art, philosophy, photography, music and silicon
 - `/` — 个人档案与内容分类 / Archive and categories
 - `/about` — 个人介绍与教育经历 / Profile and education
 - `/painting` — 2021 年的 Unity 1–5 绘画系列 / Unity 1–5 paintings from 2021
+- `/photography` — 摄影作品与拍摄参数 / Photography and camera settings
 
 ## 本地运行 / Run locally
 

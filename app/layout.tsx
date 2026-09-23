@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import RevealOnScroll from "./reveal-on-scroll";
 import { sitePath } from "./paths";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://night-personal-archive.renazir.chatgpt.site";
@@ -52,7 +51,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <RevealOnScroll />
+        <script src={sitePath("/reveal.js")} defer />
       </body>
     </html>
   );

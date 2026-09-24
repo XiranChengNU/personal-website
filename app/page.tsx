@@ -9,6 +9,7 @@ const categories = [
 
 import { sitePath } from "./paths";
 import { SiteBrand } from "./site-brand";
+import { NameMorphReady } from "./name-morph-ready";
 
 export default function Home() {
   return (
@@ -25,7 +26,14 @@ export default function Home() {
       <main id="top">
         <section className="hero wrap">
           <p className="eyebrow" data-reveal>ENGINEERING · ART · IDEAS</p>
-          <h1 data-reveal="expand">Xiran Cheng<span className="hero-subtitle">A space for curiosity.</span></h1>
+          <h1>
+            <span className="hero-name" id="hero-name">
+              <span className="hero-name-text">Xiran Cheng</span>
+              <canvas className="hero-name-canvas" aria-hidden="true" />
+            </span>
+            <span className="hero-subtitle" data-reveal>A space for curiosity.</span>
+          </h1>
+          <NameMorphReady />
           <div className="hero-intro" data-reveal>
             <p>美国东北大学电气工程博士在读。<br />在技术、艺术与思想之间，持续观察。</p>
             <p lang="en">Ph.D. student in Electrical Engineering at Northeastern University.<br />Exploring technology, art and ideas.</p>
@@ -52,6 +60,7 @@ export default function Home() {
         <span>© 2026 Xiran Cheng</span>
         <a href="https://github.com/XiranChengNU">GitHub <span aria-hidden="true">↗</span></a>
       </footer>
+      <script src={sitePath("/name-morph.js")} defer />
     </>
   );
 }

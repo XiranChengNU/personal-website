@@ -118,6 +118,13 @@ nav a span { margin-left: 4px; color: var(--gray); }
 .photo-lightbox-close { position: absolute; top: 8px; right: 14px; border: 0; padding: 0 6px; background: none; color: var(--white); font-size: 1.75rem; line-height: 1; cursor: pointer; }
 .photography-back { margin-top: 48px; }
 .philosophy-page { padding-block: 104px 96px; }
+.action-seal { margin: 0 0 96px; padding: 28px 34px 30px; border-block: 2px solid #ca454b; background: linear-gradient(90deg, rgba(151, 30, 39, .27), rgba(151, 30, 39, .08)); color: #ffe4e5; }
+.action-seal-label { display: flex; justify-content: space-between; gap: 16px; color: #ff777d; font-size: .75rem; font-weight: 650; letter-spacing: .16em; }
+.action-seal blockquote { margin: 22px 0 0; }
+.action-seal blockquote p { margin: 0; max-width: 900px; font-size: clamp(1.125rem, 2.25vw, 1.5rem); line-height: 1.85; letter-spacing: -.015em; }
+.action-seal figcaption { margin-top: 20px; color: #dc9497; font-size: .8125rem; line-height: 1.6; }
+.action-seal figcaption a { text-decoration: underline; text-underline-offset: 4px; }
+.action-seal figcaption a:hover { color: #fff; }
 .philosophy-heading h1 { margin: 0; font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 600; letter-spacing: -.055em; line-height: 1.06; }
 .philosophy-heading h1 span { display: block; margin-top: 16px; color: var(--gray); font-size: clamp(1.125rem, 2.3vw, 1.625rem); font-weight: 400; letter-spacing: -.02em; }
 .philosophy-heading .eyebrow { margin-bottom: 28px; }
@@ -146,11 +153,11 @@ html.motion-ready [data-reveal].is-visible { opacity: 1; transform: none; clip-p
 html.motion-ready .archive-row:nth-child(even), html.motion-ready .education-item:nth-child(even) { transition-delay: 70ms; }
 @media (max-width: 700px) {
   .wrap { width: calc(100% - 40px); }
-  .site-header { padding-inline: 20px; gap: 14px; }
+  .site-header { padding-inline: 20px; gap: 14px; flex-wrap: wrap; }
   .brand { gap: 8px; font-size: .9rem; }
   .brand-mark { width: 54px; height: 36px; }
   .brand-mark img { width: 54px; height: 54px; transform: translateY(-14px); }
-  nav { gap: 16px; }
+  nav { flex-basis: 100%; justify-content: space-between; gap: 12px; }
   nav a span { display: none; }
   .hero { padding-block: 92px 88px; }
   .hero h1, .profile-hero h1 { font-size: clamp(2.75rem, 11.5vw, 4.5rem); }
@@ -176,6 +183,8 @@ html.motion-ready .archive-row:nth-child(even), html.motion-ready .education-ite
   .photograph figcaption span { display: block; }
   .photo-info-panel { position: relative; top: auto; right: auto; width: 100%; max-height: none; margin-top: 12px; }
   .philosophy-page { padding-block: 76px 72px; }
+  .action-seal { margin-bottom: 76px; padding: 22px 20px 24px; }
+  .action-seal-label { letter-spacing: .1em; }
   .philosophy-quote { margin: 72px 0 84px; padding-left: 20px; }
   .philosophy-quote p { line-height: 1.65; }
   .essay-language p { font-size: 1.0625rem; line-height: 1.85; }

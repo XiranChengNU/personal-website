@@ -61,6 +61,7 @@ export default function PaintingPage() {
           <a href={sitePath("/about/")}>关于 <span lang="en">About</span></a>
           <a href={sitePath("/painting/")} aria-current="page">绘画 <span lang="en">Painting</span></a>
           <a href={sitePath("/photography/")}>摄影 <span lang="en">Photography</span></a>
+          <a href={sitePath("/philosophy/")}>哲学思考 <span lang="en">Philosophy</span></a>
           <a href={sitePath("/#work")}>档案 <span lang="en">Archive</span></a>
         </nav>
       </header>

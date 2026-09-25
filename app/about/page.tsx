@@ -64,6 +64,7 @@ export default function AboutPage() {
           <a href={sitePath("/about/")} aria-current="page">关于 <span lang="en">About</span></a>
           <a href={sitePath("/painting/")}>绘画 <span lang="en">Painting</span></a>
           <a href={sitePath("/photography/")}>摄影 <span lang="en">Photography</span></a>
+          <a href={sitePath("/philosophy/")}>哲学思考 <span lang="en">Philosophy</span></a>
           <a href={sitePath("/#work")}>档案 <span lang="en">Archive</span></a>
         </nav>
       </header>

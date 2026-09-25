@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const output = join(process.cwd(), "dist", "client");
-const routes = ["about", "painting", "photography"];
+const routes = ["about", "painting", "photography", "philosophy"];
 
 if (!existsSync(join(output, "index.html"))) {
   throw new Error("The static homepage was not generated.");

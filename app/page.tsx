@@ -1,5 +1,5 @@
 const categories = [
-  { title: "哲学思考", english: "Philosophy", description: "关于自我、技术与生活。", translation: "On the self, technology and everyday life.", href: "" },
+  { title: "哲学思考", english: "Philosophy", description: "关于自我、技术与生活。", translation: "On the self, technology and everyday life.", href: "/philosophy" },
   { title: "绘画", english: "Painting", description: "用颜色与线条记录观察。", translation: "Observations in color and line.", href: "/painting" },
   { title: "摄影", english: "Photography", description: "城市、旅途与日常的一瞬。", translation: "Moments from cities, journeys and daily life.", href: "/photography" },
   { title: "音乐评测", english: "Music Reviews", description: "从一张专辑开始，认真聆听。", translation: "Listening closely, one record at a time.", href: "" },

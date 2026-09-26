@@ -18,9 +18,9 @@ export default function Home() {
         <SiteBrand />
         <nav aria-label="主导航 / Main navigation">
           <a href={sitePath("/about/")}>关于 <span lang="en">About</span></a>
+          <a href={sitePath("/philosophy/")}>哲学思考 <span lang="en">Philosophy</span></a>
           <a href={sitePath("/painting/")}>绘画 <span lang="en">Painting</span></a>
           <a href={sitePath("/photography/")}>摄影 <span lang="en">Photography</span></a>
-          <a href={sitePath("/philosophy/")}>哲学思考 <span lang="en">Philosophy</span></a>
           <a href="#work">档案 <span lang="en">Archive</span></a>
         </nav>
       </header>
